@@ -1,9 +1,7 @@
-import sqlite3
-import requests
+
 import sys
 import json
-
-
+import sqlite3
 
 conn=sqlite3.connect("shopping_list.db")
 c=conn.cursor()

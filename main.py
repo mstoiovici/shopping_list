@@ -1,4 +1,4 @@
-from flask import Flask, render_template,redirect, request, jsonify
+from flask import Flask, render_template,redirect, request
 import sqlite3
 from engine import *
 
