@@ -7,15 +7,14 @@ app = Flask(__name__)
 # Home page
 @app.route('/')
 def index():
-    return render_template('index.html')
 
+    return render_template('index.html')
+"""
 @app.route("/item_list",methods=["GET"])
 def get_item_list():
     items=get_information()
-#    for item in items:
-#        title=item[0]
-#        description=item[1]
     return render_template('item_list.html', **locals())
+"""
 
 @app.route("/item_new",methods=["GET", "POST"])
 def get_item_new():
@@ -23,13 +22,16 @@ def get_item_new():
     title=form_data["title"]
     description=form_data["description"]
     new_to_database=new_entry(title,description)
-    return render_template("index.html", **locals())
+    items=get_information()
+    return render_template("item_list.html", **locals())
 
-
-@app.route("/item_delete/<string:title>",methods=["GET", "POST"])
+# I should find a better way of getting the items, not by title, I need an id or pk.
+# For a shopping list I wouldn't have the same title for two items but even so...
+@app.route("/item_delete/<string:title>",methods=["GET", "POST"]) # I should find a better
 def get_item_delete(title):
     delete=delete_entry(title)
-    return render_template("index.html", **locals())
+    items=get_information()
+    return render_template("item_list.html", **locals())
 
 
 @app.route("/list_delete",methods=["GET", "POST"])
