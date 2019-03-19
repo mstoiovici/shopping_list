@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!--TASK ENTRY BOX-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> Shopping List App </title>
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+
+<body>
+  <header class="container">
+    <h1>Shopping List App</h1>
+  </header>
+
+
+
+
+  <!--ITEM ENTRY BOX-->
+  <div class="container">
+    <div class="row">
+      <form class="col-sm-3" action="/item_new" method="POST">
+
+        <div class="form-group">
+          <label for="title">Item</label>
+          <input class="form-control " type="text" placeholder="Add an item..." id="title" name="title">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control " id="description" name="description" required="required" placeholder="Description">
+        </div>
+
+
+        </div>
+<!-- the button-->
+        <div class="row text-center">
+          <button id="add" class="btn btn-light ">
+            ADD Item
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+{%block content%}
+{% endblock %}
+
+
+  <script src="static/js/js.js"></script>
+</body>
+
+</html>

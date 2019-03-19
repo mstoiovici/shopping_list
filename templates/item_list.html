@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+
+  <div>
+    <p>This is your shopping list: </p>
+    </div>
+
+{% for item in items %}
+<div>
+
+  <form class="col-sm-3" action="/item_delete/{{item[0]}}" method="POST">
+    <div class="form-group">
+      <label for="title" id="title" name="title">Item: {{item[0]}}</label>
+      <input type="submit" value="Delete" id="delete_button"></input>
+      </div>
+  </form>
+
+  <p>
+    Description :{{ item[1] }}
+    </p>
+
+</div>
+{% endfor %}
+
+
+<div id="delete_list">
+  <form class="col-sm-3" action="/list_delete" method="POST">
+    <div class="form-group">
+
+      <input type="submit" value="Delete list" id="list_delete_button"></input>
+      </div>
+  </form>
+  </div>
+
+
+{% endblock %}
